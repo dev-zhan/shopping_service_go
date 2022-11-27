@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	database.Connect("host=localhost user=postgres password=postgres dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai")
+	database.Connect("host=localhost user=postgres password=postgres dbname=shopping_service_db port=5432 sslmode=disable TimeZone=Asia/Shanghai")
 	database.Migrate()
 	router := mux.NewRouter()
 
