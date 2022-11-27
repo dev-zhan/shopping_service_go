@@ -21,8 +21,8 @@ func GetItem(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	params := mux.Vars(r)
 	inputID := params["itemId"]
-	if !checkIfUserExists(inputID) {
-		json.NewEncoder(w).Encode("User Not Found!")
+	if !checkIfItemExists(inputID) {
+		json.NewEncoder(w).Encode("Item Not Found!")
 		return
 	}
 	var item models.Item
@@ -51,8 +51,8 @@ func GetItems(w http.ResponseWriter, r *http.Request) {
 func UpdateItem(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	inputID := params["itemId"]
-	if !checkIfUserExists(inputID) {
-		json.NewEncoder(w).Encode("User Not Found!")
+	if !checkIfItemExists(inputID) {
+		json.NewEncoder(w).Encode("Item Not Found!")
 		return
 	}
 	var item models.Item
@@ -66,8 +66,8 @@ func UpdateItem(w http.ResponseWriter, r *http.Request) {
 func DeleteItem(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	inputID := params["itemId"]
-	if !checkIfUserExists(inputID) {
-		json.NewEncoder(w).Encode("User Not Found!")
+	if !checkIfItemExists(inputID) {
+		json.NewEncoder(w).Encode("Item Not Found!")
 		return
 	}
 	var item models.Item
